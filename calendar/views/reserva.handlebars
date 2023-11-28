@@ -1,0 +1,75 @@
+<link rel="stylesheet" href="/css/reserva.css">
+<body>
+   
+<a class="arrow" href="/calendar"><i class="fas fa-arrow-left"></i></a>
+
+<section class="sessao-reserva">
+
+   <h1>Reservar Quarto</h1>
+
+   <div class="formulario">
+      <form id="form" action="" method="post">
+
+         <div class="form-control">
+            <label for="name">Nome do cliente:</label>
+            <input type="text" id="username" placeholder="Digite o nome do cliente">
+            <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
+            <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
+
+            <span>Error Message</span>
+         </div>
+
+         <div class="form-control">
+            <label for="emailouCpf">E-mail ou Cpf:</label>
+            <input type="text" id="emailouCpf" placeholder="Digite o E-mail ou Cpf do cliente">
+            <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
+            <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
+
+            <span>Error Message</span>
+         </div>
+
+         <div class="form-control">
+            <label for="telefone">Número de telefone:</label>
+            <input type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx">
+            <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
+            <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
+
+            <span>Error Message</span>
+         </div>
+
+         <div class="resultHorario">
+              <h2>Data de Check-in e Check-out:</h2>
+              <div class="check-in">
+                 <h3>Check-in:</h3>
+                 <h3 id="">00/00</h3>
+                 <h3 id="">00:00hr</h3>
+              </div>
+              <div class="check-out">
+                 <h3>Check-out:</h3>
+                 <h3 id="">00/00</h3>
+                 <h3 id="">00:00hr</h3>
+              </div>
+           </div>
+
+         <div class="botao-reserve">
+            <button type="submit">Reservar</button>
+         </div>
+      </form>
+
+
+      <div class="caixa-suite">
+         <img class="img" src="/img/suite1.jpg" alt="a">
+         <aside class="aside">
+            <i class="fas fa-angle-left ant"></i>
+            <h2>Suíte, N°1</h2>
+             <i class="fas fa-angle-right pro"></i>
+         </aside>
+         {{!-- <strong id="indisponivel"></strong> --}}
+         <p>preço <br> 160,00</p>
+      </div>
+
+
+   </div>
+</section>
+</body>
+<script src="/js/reserva.js"></script>

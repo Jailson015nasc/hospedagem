@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #002F75;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.home {
+    background-image: url(../img/image-laguna-pousada-quinta-do-ypua-1\ 1\ \(1\).png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+  }
+  
+  
+  .aside-btn a {
+    background-color: #429ED2;
+    padding: 25px 100px;
+    cursor: pointer;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 30pt;
+  }
+  .aside-btn{
+    width: 340px;
+    margin-left: 21%;
+  }
+  .logo-inicial img{
+    width: 550px;
+    height: 550px;
+    margin-top: -30px;
+  }
+  

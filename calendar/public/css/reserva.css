@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #002F75;
+  color: #fff;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 100vh;
+}
+
+.sessao-reserva {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
+  margin: auto;
+}
+
+.sessao-reserva h1{
+  font-size: 23pt;
+  text-transform: uppercase;
+} 
+
+.arrow{
+  align-self: flex-start;
+  padding-top: 30px;
+  margin-left: 5%;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+#form {
+  padding: 0 100px 30px;
+}
+
+
+/* #indisponivel{
+   color: red;
+ } */
+
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+
+.form-control label {
+  display: inline-block;
+  font-size: 15pt;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+
+.form-control input {
+  background-color: #429ED2;
+  border-radius: 5px;
+  outline: 0;
+  display: block;
+  font-size: 14px;
+  width: 310px;
+  padding: 15px;
+  border: none;
+}
+
+
+.form-control.error i.img-error {
+  visibility: visible;
+}
+
+
+.form-control.success i.img-success {
+  visibility: visible;
+}
+
+.form-control i {
+  position: absolute;
+  top: 38px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.form-control.error span {
+  color: #DB5A5A;
+  visibility: visible;
+}
+
+
+.form-control span {
+  visibility: hidden;
+  position: absolute;
+  margin-top: 2px;
+  font-size: 15px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 0.5;
+}
+
+.botao-reserve button {
+  background-color: #429ED2;
+  border-radius: 5px;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  font-size: 17pt;
+  font-weight: 600;
+  cursor: pointer;
+  width: 190px;
+  margin-top: 30px;
+}
+
+
+.botao-reserve {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.formulario {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+.caixa-suite {
+  background-color: #429ED2;
+  padding: 50px;
+  width: 340px;
+  height: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: -15px;
+}
+
+
+.resultHorario {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 10px;
+}
+
+.resultHorario h2 {
+  font-size: 15pt;
+}
+
+
+.check-in {
+  display: flex;
+  gap: 3rem;
+}
+
+.check-out {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.caixa-suite {
+  display: grid;
+  place-items: center;
+
+}
+
+.caixa-suite p {
+  text-align: center;
+  font-size: 16pt;
+}
+
+
+.img {
+  width: 200px;
+  height: 200px;
+  border-radius: 9px;
+  /* margin: auto; */
+}
+
+
+.aside {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+
+.aside h2 {
+  margin-top: -2px;
+  font-size: 17pt;
+}
+
+
+.aside i {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
