@@ -48,14 +48,14 @@ body {
  } */
 
 
-.form-control {
+.form-controll {
   margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
 }
 
 
-.form-control label {
+.form-controll label {
   display: inline-block;
   font-size: 15pt;
   margin-bottom: 5px;
@@ -63,7 +63,7 @@ body {
 }
 
 
-.form-control input {
+.form-controll input {
   background-color: #429ED2;
   border-radius: 5px;
   outline: 0;
@@ -75,29 +75,29 @@ body {
 }
 
 
-.form-control.error i.img-error {
+.form-controll.error i.img-error {
   visibility: visible;
 }
 
 
-.form-control.success i.img-success {
+.form-controll.success i.img-success {
   visibility: visible;
 }
 
-.form-control i {
+.form-controll i {
   position: absolute;
   top: 38px;
-  right: 10px;
+  right: 22px;
   visibility: hidden;
 }
 
-.form-control.error span {
+.form-controll.error span {
   color: #DB5A5A;
   visibility: visible;
 }
 
 
-.form-control span {
+.form-controll span {
   visibility: hidden;
   position: absolute;
   margin-top: 2px;

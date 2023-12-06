@@ -14,7 +14,7 @@ body {
   height: 100vh;
 }
 
-.container {
+.caixa-contai {
   border-radius: 30px;
   width: 80vw;
   height: 900px;
@@ -45,6 +45,7 @@ body {
   font-size: 30px;
   cursor: pointer;
 }
+
 .month h1 {
   font-size: 30px;
   font-weight: bold;
@@ -57,7 +58,7 @@ body {
   justify-content: space-evenly;
   height: 60px;
   gap: 1rem;
-  
+
 }
 
 .weekdays div {
@@ -78,7 +79,7 @@ body {
   text-decoration: none;
 }
 
-.day{
+.day {
   /* width: 100%; */
   font-size: 17pt;
   padding: .5rem;
@@ -143,9 +144,11 @@ body {
   left: -400px;
   transition: left .4s linear;
 }
+
 .show {
   left: 0;
 }
+
 .hide {
   left: -400px;
 }
@@ -164,7 +167,8 @@ body {
   font-weight: bold;
   font-size: 20px;
 }
-.dropdown-content a::after{
+
+.dropdown-content a::after {
   content: '';
   position: absolute;
   left: 0;
@@ -178,10 +182,22 @@ body {
   transition: transform .5s;
 }
 
-.dropdown-content a:hover::after{
+.dropdown-content a:hover::after {
   transform: scaleX(1);
 }
-.dropdown-content a:hover{
+
+.dropdown-content a:hover {
   color: #429ed2;
 }
 
+.calendar-alert {
+  max-width: 1000px;
+  margin: auto ;
+  text-align: center;
+}
+.calendar-green{
+  color: green;
+}
+.close{
+  display: block;
+}

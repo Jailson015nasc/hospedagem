@@ -1,0 +1,58 @@
+.caixa-reservado {
+    background-color: #0D4C92;
+    font-family: 'Inter', sans-serif;
+}
+
+.cont-reservado h1 {
+    font-size: 24pt;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+}
+
+.cont-cliente {
+    width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: #fff;
+    font-size: 14pt;
+}
+
+.resultHorario {
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+    margin: auto;
+    color: #fff;
+}
+
+.resultHorario h2 {
+    font-size: 15pt;
+}
+
+.check-in {
+    margin-top: -20px;
+    display: flex;
+    gap: 3rem;
+}
+
+.check-out {
+    margin-top: -20px;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.voltar-btn{
+    width: 160px;
+    margin-left: 22%;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 14pt;
+    text-transform: capitalize;
+    background-color: #429ED2;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+}

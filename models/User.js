@@ -14,7 +14,7 @@ const User = database.define("users", {
     allowNull: false,
     require: true,
     unique: true,
-  },
+  },  
 
   cell: {
     type: DataTypes.STRING,
