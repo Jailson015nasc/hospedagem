@@ -46,7 +46,6 @@
 
 .voltar-btn{
     width: 160px;
-    margin-left: 22%;
     padding: 7px;
     border-radius: 10px;
     font-size: 14pt;
@@ -55,4 +54,8 @@
     color: #fff;
     border: 0;
     cursor: pointer;
+}
+.btn-volte{
+   width: 800px;
+   margin: auto;
 }

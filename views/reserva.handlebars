@@ -8,7 +8,7 @@
 
       <h1>Reservar Quarto</h1>
 
-      <div class="formulario">
+       <div class="formulario">
          <form id="form" action="/register" method="post">
 
             <div class="form-controll">
@@ -16,8 +16,7 @@
                <input type="text" name="name" id="username" placeholder="Digite o nome do cliente">
                <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
                <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
-
-               <span>Error Message</span>
+               <span></span>
             </div>
 
             <div class="form-controll">
@@ -25,8 +24,7 @@
                <input type="text" name="emailouCpf" id="emailouCpf" placeholder="Digite o E-mail ou Cpf do cliente">
                <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
                <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
-
-               <span>Error Message</span>
+               <span></span>
             </div>
 
             <div class="form-controll">
@@ -34,8 +32,7 @@
                <input type="tel" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
                <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
                <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
-
-               <span>Error Message</span>
+               <span></span>
             </div>
 
             <div class="resultHorario">
@@ -47,8 +44,8 @@
                </div>
                <div class="check-out">
                   <h3>Check-out:</h3>
-                  <h3 id="checkOutDate">00/00</h3>
-                  <h3 id="checkOutTime">00:00hr</h3>
+                  <input type="date" id="data" name="data">
+                  <input type="time" id="hora" name="horaEscolhida">
                </div>
             </div>
 

@@ -15,7 +15,6 @@ const connection = require("./db/conn");
 
 // Import Models
 const User = require("./models/User");
-const Bedrooms = require("./models/Bedrooms")
 
 // Import Routers
 const losRouters = require("./routers/losRouters");
@@ -28,7 +27,9 @@ const hbs = handlebars.create({
      * Este helper foi criado para converter os valores que estavam sendo emitidos
      * e exibi-los num formato JSON.
      */
+
     json: (context) => JSON.stringify(context, null, 2),
+    formatDate: (date) => new Date(date).toISOString().split('T')[0]
   },
 });
 

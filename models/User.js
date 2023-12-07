@@ -1,26 +1,36 @@
 const { DataTypes } = require("sequelize");
-
 const database = require("../db/conn");
 
-const User = database.define("users", {
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    require: true,
-  },
-
-  cpf: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    require: true,
-    unique: true,
-  },  
-
-  cell: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    require: true,
-  },
+const User = database.define("User", {
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        require: true,
+      },
+    
+      emailouCpf: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        require: true,
+        unique: true,
+      },
+    
+      telefone: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        require: true,
+      },
+    
+      data: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        require: true,
+      },
+    
+      horaEscolhida: {
+        type: DataTypes.TIME, 
+        allowNull: false,
+      },
 });
 
 module.exports = User;

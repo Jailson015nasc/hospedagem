@@ -45,83 +45,8 @@ document.querySelector('.pro').addEventListener('click', function () {
 });
 
 
-// validacao
-const form = document.getElementById('form');
-const username = document.getElementById('username');
-const emailoucpf = document.getElementById('emailouCpf');
-const telefone = document.getElementById('telefone');
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    centroInputs()
-    const success = centroInputs();
-    if (success) {
-        window.location.href = "/reservado";
-    }
-});
-
-function centroInputs() {
-    let success = true;
-
-    const usernameValue = username.value.trim();
-    const emailouCpfValue = emailoucpf.value.trim();
-    const telefoneValue = telefone.value.trim();
-
-    if (usernameValue === '') {
-        setErrorFor(username, 'Preencha este campo');
-        success = false;
-    } else {
-        setSuccessFor(username);
-    }
-
-    if (emailouCpfValue === '') {
-        setErrorFor(emailoucpf, 'Preencha este campo');
-        success = false;
-    } else {
-        if (isValidEmail(emailouCpfValue)) {
-            setSuccessFor(emailoucpf);
-        } else if (isValidCPF(emailouCpfValue)) {
-            setSuccessFor(emailoucpf);
-        } else {
-            setErrorFor(emailoucpf, 'Email ou CPF inválido, tente de novo');
-            success = false;
-        }
-    }
-
-    if (telefoneValue === '') {
-        setErrorFor(telefone, 'Preencha este campo');
-        success = false;
-    } else if (telefoneValue.length < 11) {
-        setErrorFor(telefone, 'só aceitamos numero de telefone');
-        success = false;
-    } else {
-        setSuccessFor(telefone);
-    }
-
-    return success;
-}
-function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const span = formControl.querySelector('span');
-    span.innerText = message;
-    formControl.className = 'form-controll error';
-}
-
-function setSuccessFor(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-controll success';
-}
-function isValidEmail(value) {
-    const emailRegex = /^(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
-    return emailRegex.test(value);
-}
-function isValidCPF(value) {
-    const cpfRegex = /^\d{11}$/;
-    return cpfRegex.test(value);
-}
 
 // ResultHorario
-
   // Função para obter a data e hora atual formatada
   function getCurrentDateTime() {
     const now = new Date();
@@ -136,9 +61,6 @@ function isValidCPF(value) {
     // Atualizar elementos apenas para check-in
     document.getElementById("checkInDate").textContent = currentDateTime.split(" ")[0];
     document.getElementById("checkInTime").textContent = currentDateTime.split(" ")[1];
-    // Atualizar elementos apenas para check-out
-    document.getElementById("checkOutDate").textContent = currentDateTime.split(" ")[0];
-    document.getElementById("checkOutTime").textContent = currentDateTime.split(" ")[1];
   }
 
   // Chamar a função para a primeira atualização
