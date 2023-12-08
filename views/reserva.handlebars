@@ -8,56 +8,60 @@
 
       <h1>Reservar Quarto</h1>
 
-       <div class="formulario">
-         <form id="form" action="/register" method="post">
+      <div class="formulario">
+         <div class="">
+            <form id="form" action="/register" method="post">
 
-            <div class="form-controll">
-               <label for="name">Nome do cliente:</label>
-               <input type="text" name="name" id="username" placeholder="Digite o nome do cliente">
-               <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
-               <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
-               <span></span>
-            </div>
-
-            <div class="form-controll">
-               <label for="emailouCpf">E-mail ou Cpf:</label>
-               <input type="text" name="emailouCpf" id="emailouCpf" placeholder="Digite o E-mail ou Cpf do cliente">
-               <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
-               <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
-               <span></span>
-            </div>
-
-            <div class="form-controll">
-               <label for="telefone">Número de telefone:</label>
-               <input type="tel" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
-               <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
-               <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
-               <span></span>
-            </div>
-
-            <div class="resultHorario">
-               <h2>Data de Check-in e Check-out:</h2>
-               <div class="check-in">
-                  <h3>Check-in:</h3>
-                  <h3 id="checkInDate">00/00</h3>
-                  <h3 id="checkInTime">00:00hr</h3>
+               <div class="form-controll">
+                  <label for="name">Nome do cliente:</label>
+                  <input type="text" name="name" id="username" placeholder="Digite o nome do cliente">
+                  <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
+                  <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
+                  <span></span>
                </div>
-               <div class="check-out">
-                  <h3>Check-out:</h3>
-                  <input type="date" id="data" name="data">
-                  <input type="time" id="hora" name="horaEscolhida">
+
+               <div class="form-controll">
+                  <label for="emailouCpf">E-mail ou Cpf:</label>
+                  <input type="text" name="emailouCpf" id="emailouCpf" placeholder="Digite o E-mail ou Cpf do cliente">
+                  <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
+                  <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
+                  <span></span>
                </div>
-            </div>
+
+               <div class="form-controll">
+                  <label for="telefone">Número de telefone:</label>
+                  <input type="tel" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
+                  <i class="img-success"> <img src="/svg/sucesso.svg" alt=""> </i>
+                  <i class="img-error"> <img src="/svg/erro.svg" alt=""> </i>
+                  <span></span>
+               </div>
+
+               <div class="resultHorario">
+                  <h2>Data de Check-in e Check-out:</h2>
+                  <div class="check-in">
+                     <h3>Check-in:</h3>
+                     <h3 id="checkInDate">00/00</h3>
+                     <h3 id="checkInTime">00:00hr</h3>
+                  </div>
+                  <div class="check-out">
+                     <h3>Check-out:</h3>
+                     <input type="date" id="data" name="data">
+                     <input type="time" id="hora" name="horaEscolhida">
+                  </div>
+               </div>
 
 
-            <div class="botao-reserve">
-               <button type="submit">Reservar</button>
-            </div>
-         </form>
+               <div id="botaoReservar" class="botao-reserve">
+                  <button type="submit">Reservar</button>
+               </div>
+         </div>
+
 
 
          <div class="caixa-suite">
-            <img class="img" src="/img/suite1.jpg" alt="a">
+            <input type="hidden" name="suiteEscolhida" id="suiteEscolhida" value="">
+            <input type="hidden" name="precoEscolhida" id="precoEscolhida" value="">
+            <img id="imagem" class="img" src="/img/suite1.jpg" alt="Imagem da Suíte">
             <aside class="aside">
                <i class="fas fa-angle-left ant"></i>
                <h2>Suíte, N°1</h2>
@@ -66,7 +70,7 @@
             {{!-- <strong id="indisponivel"></strong> --}}
             <p>preço <br> 160,00</p>
          </div>
-
+         </form>
 
       </div>
    </section>

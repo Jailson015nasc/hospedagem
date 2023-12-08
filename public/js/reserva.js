@@ -21,11 +21,15 @@ let suiteElement = document.querySelector('.caixa-suite');
 let imgElement = suiteElement.querySelector('.img');
 let tituloElement = suiteElement.querySelector('h2');
 let precoElement = suiteElement.querySelector('p');
-
+ 
 function atualizarSuite() {
     imgElement.src = suites[suiteAtual].img;
     tituloElement.textContent = suites[suiteAtual].titulo;
     precoElement.innerHTML = `Preço <br> ${suites[suiteAtual].preco}`;
+
+    document.getElementById('suiteEscolhida').value = suites[suiteAtual].titulo;
+    document.getElementById('precoEscolhida').value = suites[suiteAtual].preco;
+
 }
 atualizarSuite();
 

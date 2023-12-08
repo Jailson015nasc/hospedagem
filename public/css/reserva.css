@@ -39,7 +39,8 @@ body {
 }
 
 #form {
-  padding: 0 100px 30px;
+  
+  /* padding: 0 100px 30px; */
 }
 
 
@@ -178,23 +179,21 @@ body {
   color: #fff;
   font-size: 11pt;
 }
-.caixa-suite {
-  display: grid;
-  place-items: center;
-
-}
 
 .caixa-suite p {
   text-align: center;
   font-size: 16pt;
 }
 
+.caixa-suite{
+   display: grid;
+   place-items: center;
+}
 
 .img {
   width: 200px;
   height: 200px;
   border-radius: 9px;
-  /* margin: auto; */
 }
 
 

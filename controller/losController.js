@@ -4,39 +4,42 @@ const User = require("../models/User");
 
 class LosController {
    static async register(req, res) {
-      const { name, emailouCpf, telefone, data, horaEscolhida } = req.body;
+      const { name, emailouCpf, telefone, data, horaEscolhida, suiteEscolhida, precoEscolhida } = req.body;
       let user;
+  
       try {
-         
-         const dataObj = new Date(`${data} ${horaEscolhida}`);
-         if (!isNaN(dataObj.getTime())) {
-
-            user = {
-               name,
-               emailouCpf,
-               telefone,
-               data: dataObj,
-               horaEscolhida
-            };
-            const createUser = await User.create(user);
-            console.log('Dados inseridos:', createUser.toJSON());
-            return res.redirect("/reservado");
-         } else {
-            console.error("erro");
-            const errorMessage =
-               `<body style="background-color: red; display: flex; align-items: center; height: 100vh; justify-content: center; flex-direction: column;" class="img">
-            <div  style="display: flex;">
-               <a href="/reserva">
-               <img style="border-radius: 50%;"src="/img/erro.jpg" alt="" width="700px" height="700px">
-               </a>
-           </div>
-             </body>
-              `;
-            return res.status(400).send(errorMessage);
-         }
+          const dataObj = new Date(`${data} ${horaEscolhida}`);
+          if (!isNaN(dataObj.getTime())) {
+              user = {
+                  name,
+                  emailouCpf,
+                  telefone,
+                  data: dataObj,
+                  horaEscolhida,
+                  suiteEscolhida,
+                  precoEscolhida,
+                 
+              };
+  
+              const createUser = await User.create(user);
+              console.log('Dados inseridos:', createUser.toJSON());
+              return res.redirect("/reservado");
+          } else {
+              console.error("erro");
+              const errorMessage =
+                  `<body style="background-color: red; display: flex; align-items: center; height: 100vh; justify-content: center; flex-direction: column;" class="img">
+              <div  style="display: flex;">
+                  <a href="/reserva">
+                  <img style="border-radius: 50%;"src="/img/erro.jpg" alt="" width="700px" height="700px">
+                  </a>
+              </div>
+              </body>
+                  `;
+              return res.status(400).send(errorMessage);
+          }
       } catch (error) {
-         console.error(error);
-         return res.status(500).send("Erro ao criar usuário.");
+          console.error(error);
+          return res.status(500).send("Erro ao criar usuário.");
       }
    }
    static async showReservado(req, res) {

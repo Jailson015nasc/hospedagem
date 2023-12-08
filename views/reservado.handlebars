@@ -8,52 +8,64 @@
 
         {{#if users.length}}
         {{#each users}}
-        <aside class="cont-cliente">
-            <div class="cliente">
-                <h3>Nome do Cliente:</h3>
-                <p> {{this.name}}</p>
-            </div>
+        <article>
+            <section>
+                <aside class="cont-cliente">
+                    <div class="cliente">
+                        <h3>Nome do Cliente:</h3>
+                        <p> {{this.name}}</p>
+                    </div>
 
-            <div class="cliente">
-                <h3>E-mail ou CPF:</h3>
-                <p>{{this.emailouCpf}}</p>
-            </div>
+                    <div class="cliente">
+                        <h3>E-mail ou CPF:</h3>
+                        <p>{{this.emailouCpf}}</p>
+                    </div>
 
-            <div class="cliente">
-                <h3>Número de Telefone:</h3>
-                <p>{{this.telefone}}</p>
+                    <div class="cliente">
+                        <h3>Número de Telefone:</h3>
+                        <p>{{this.telefone}}</p>
+                    </div>
+                </aside>
+                <div class="resultHorario">
+                    <h2>Data de Check-in e Check-out:</h2>
+                    <div class="check-in">
+                        <h3>Check-in:</h3>
+                        <h3 id="checkInDate">00/00</h3>
+                        <h3 id="checkInTime">00:00hr</h3>
+                    </div>
+                    <div class="check-out">
+                        <h3>Check-out:</h3>
+                        <input type="date" id="data" name="data" value="{{formatDate this.data}}">
+                        <input type="time" id="hora" name="horaEscolhida" value="{{this.horaEscolhida}}">
+                    </div>
+                </div>
+            </section>
+
+            <div class="caixa-suite">
+                <img class="img" src="/img/suite1.jpg" alt="">
+                <aside class="aside">
+                    <i class="fas fa-angle-left ant"></i>
+                    <h2>{{this.suiteEscolhida}}</h2>
+                    <i class="fas fa-angle-right pro"></i>
+                    <span class="success">✔</span>
+                </aside>
+                {{!-- <strong id="indisponivel"></strong> --}}
+                <p>preço <br> {{this.precoEscolhida}}</p>
+                <div class="reserva-info"></div>
+
             </div>
-        </aside>
-        <div class="resultHorario">
-            <h2>Data de Check-in e Check-out:</h2>
-            <div class="check-in">
-                <h3>Check-in:</h3>
-                <h3 id="checkInDate">00/00</h3>
-                <h3 id="checkInTime">00:00hr</h3>
-            </div>
-            <div class="check-out">
-                <h3>Check-out:</h3>
-                <input type="date" id="data" name="data" value="{{formatDate this.data}}">
-                <input type="time" id="hora" name="horaEscolhida" value="{{this.horaEscolhida}}">
-            </div>
-        </div>
+        </article>
+        <hr>
         {{/each}}
         {{else}}
-        <p>Não há reservas no momento.</p>
+        <p class="reserva-mm">Não há reservas no momento!</p>
         {{/if}}
-
-
-
-
-
-        <div class="btn-volte">
-            <a href="/calendar">
-                <button class="voltar-btn">voltar</button>
-            </a>
-        </div>
-
+    </div>
+    <div class="btn-volte">
+        <a href="/calendar">
+            <button class="voltar-btn">voltar</button>
+        </a>
     </div>
 
 
 </body>
-

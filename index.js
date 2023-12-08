@@ -6,12 +6,14 @@ const FileStore = require("session-file-store")(session);
 const path = require("path");
 const os = require("os");
 
-const port = 4333
+const port = 4333;
 
 // Inicializa o express
 const app = express();
 
 const connection = require("./db/conn");
+
+app.use('/img', express.static("./public/img/"));
 
 // Import Models
 const User = require("./models/User");
@@ -23,13 +25,8 @@ const losRouters = require("./routers/losRouters");
 const hbs = handlebars.create({
   partialsDir: ["views/partials"],
   helpers: {
-    /**
-     * Este helper foi criado para converter os valores que estavam sendo emitidos
-     * e exibi-los num formato JSON.
-     */
-
     json: (context) => JSON.stringify(context, null, 2),
-    formatDate: (date) => new Date(date).toISOString().split('T')[0]
+    formatDate: (date) => new Date(date).toISOString().split('T')[0],
   },
 });
 
@@ -40,7 +37,7 @@ app.set("view engine", "handlebars");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//Configurando a sessão do usuário
+// Configurando a sessão do usuário
 app.use(
   session({
     name: "session",
@@ -76,11 +73,10 @@ app.use('/', losRouters);
 
 // Conexão com o banco de dados
 connection
-  .sync()
+  .sync({force: true})
   .then(() => {
-    app.listen(port, ()=>{
+    app.listen(port, () => {
       console.log(`http://localhost:${port}`)
     });
   })
   .catch((error) => console.error(error));
-
