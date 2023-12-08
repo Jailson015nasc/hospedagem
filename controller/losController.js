@@ -7,29 +7,10 @@ class LosController {
       const { name, emailouCpf, telefone, data, horaEscolhida } = req.body;
       let user;
       try {
-         // Converta a string da data para um objeto Date
-         const dataObj = new Date(`${data} ${horaEscolhida}`);
          
-         // const nome = name
-         // const emailouCpf = emailouCpf
-         // const telefone = telefone
-
-         // if(nome === ''){
-         //    console.error("erro");
-         //    return res.status(400).send('name erro');
-         // }
-         // if(telefone === ''){
-         //    console.error("erro");
-         //    return res.status(400).send(' telefone erro');
-         // }
-         // if(emailouCpf === ''){
-         //    console.error("erro");
-         //    return res.status(400).send('email ou cpf erro');
-         // }
-
-
+         const dataObj = new Date(`${data} ${horaEscolhida}`);
          if (!isNaN(dataObj.getTime())) {
-            // Se for válida, crie o usuário
+
             user = {
                name,
                emailouCpf,
@@ -37,29 +18,39 @@ class LosController {
                data: dataObj,
                horaEscolhida
             };
-   
             const createUser = await User.create(user);
             console.log('Dados inseridos:', createUser.toJSON());
             return res.redirect("/reservado");
          } else {
             console.error("erro");
-            return res.status(400).send("erro");
+            const errorMessage =
+               `<body style="background-color: red; display: flex; align-items: center; height: 100vh; justify-content: center; flex-direction: column;" class="img">
+            <div  style="display: flex;">
+               <a href="/reserva">
+               <img style="border-radius: 50%;"src="/img/erro.jpg" alt="" width="700px" height="700px">
+               </a>
+           </div>
+             </body>
+              `;
+            return res.status(400).send(errorMessage);
          }
       } catch (error) {
          console.error(error);
          return res.status(500).send("Erro ao criar usuário.");
       }
    }
-   
    static async showReservado(req, res) {
       try {
          const users = await User.findAll({ raw: true });
          console.log('Dados retornados:', users);
          return res.render("reservado", { users });
-     } catch (error) {
+      } catch (error) {
          console.error(error);
          return res.status(500).send("Erro ao recuperar usuários.");
-     }
+      }
+   }
+   static async showBusca(req, res) {
+      return res.render("busca");
    }
    static async showHome(req, res) {
       return res.render("home");
@@ -71,11 +62,6 @@ class LosController {
 
    static async showReserva(req, res) {
       return res.render("reserva");
-   }
-
-
-   static async showBusca(req, res) {
-      return res.render("busca");
    }
 }
 

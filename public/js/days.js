@@ -44,8 +44,6 @@ const renderCalendar = () => {
 
   document.querySelector(".date h1").innerHTML = months[date.getMonth()];
 
-  // document.querySelector(".date p").innerHTML = new Date().toDateString();
-
   let days = "";
 
   for (let x = firstDayIndex; x > 0; x--) {
@@ -57,33 +55,27 @@ const renderCalendar = () => {
       i === new Date().getDate() &&
       date.getMonth() === new Date().getMonth()
     ) {
-      days += `<div class="day today">${i}  
-      <aside class="home-vaga">
-      <p>0/15<p>
-      <span><img src="/svg/casa.svg" alt="casinha"></span>
-   </aside>
+      days += `<div class="day today" onclick="showDate(${i})">${i}  
+        <aside class="home-vaga">
+          <p>0/15<p>
+          <span><img src="/svg/casa.svg" alt="casinha"></span>
+        </aside>
       </div>`;
     } else {
-      days += `<div class="day days-calendar">${i}
-      <aside class="home-vaga">
-         <p>0/15<p>
-         <span><img src="/svg/casa.svg" alt="casinha"></span>
-      </aside>
-         </div>`;
+      days += `<div class="day days-calendar" onclick="showDate(${i})">${i}
+        <aside class="home-vaga">
+          <p>0/15<p>
+          <span><img src="/svg/casa.svg" alt="casinha"></span>
+        </aside>
+      </div>`;
     }
-
   }
 
   for (let j = 1; j <= nextDays; j++) {
     days += `<div class="day next-date">${j}</div>`;
-    monthDays.innerHTML = days;
   }
 
-  // Inserir o conteúdo do calendário no espaço reservado
-  const calendarContent = days;
-
-  const calendarContainer = document.querySelector(".days");
-  calendarContainer.innerHTML = calendarContent;
+  monthDays.innerHTML = days;
 };
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -95,7 +87,9 @@ document.querySelector(".next").addEventListener("click", () => {
   date.setMonth(date.getMonth() + 1);
   renderCalendar();
 });
+
 renderCalendar();
+
 
 
 // menu

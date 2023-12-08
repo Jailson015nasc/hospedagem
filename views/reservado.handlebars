@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/reservado.css">
 
 <body class="caixa-reservado">
-    
+
     <div class="cont-reservado">
         <!-- reservado.hbs -->
         <h1>Quarto Reservado</h1>
@@ -9,17 +9,28 @@
         {{#if users.length}}
         {{#each users}}
         <aside class="cont-cliente">
-            <p>Nome do Cliente: {{this.name}}</p>
-            <p>E-mail ou CPF: {{this.emailouCpf}}</p>
-            <p>Número de Telefone: {{this.telefone}}</p>
+            <div class="cliente">
+                <h3>Nome do Cliente:</h3>
+                <p> {{this.name}}</p>
+            </div>
+
+            <div class="cliente">
+                <h3>E-mail ou CPF:</h3>
+                <p>{{this.emailouCpf}}</p>
+            </div>
+
+            <div class="cliente">
+                <h3>Número de Telefone:</h3>
+                <p>{{this.telefone}}</p>
+            </div>
         </aside>
         <div class="resultHorario">
             <h2>Data de Check-in e Check-out:</h2>
             <div class="check-in">
-                  <h3>Check-in:</h3>
-                  <h3 id="checkInDate">00/00</h3>
-                  <h3 id="checkInTime">00:00hr</h3>
-               </div>
+                <h3>Check-in:</h3>
+                <h3 id="checkInDate">00/00</h3>
+                <h3 id="checkInTime">00:00hr</h3>
+            </div>
             <div class="check-out">
                 <h3>Check-out:</h3>
                 <input type="date" id="data" name="data" value="{{formatDate this.data}}">
@@ -45,3 +56,4 @@
 
 
 </body>
+

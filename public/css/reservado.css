@@ -20,12 +20,18 @@
     font-size: 14pt;
 }
 
+.cliente p{
+    opacity: 60%;
+     margin-left: 20px;
+}
+
 .resultHorario {
     display: flex;
     flex-direction: column;
     width: 900px;
-    margin: auto;
+    margin:10px auto;
     color: #fff;
+    border-bottom: 2px solid #fff;
 }
 
 .resultHorario h2 {
@@ -41,7 +47,17 @@
 .check-out {
     margin-top: -20px;
     display: flex;
-    gap: 2.5rem;
+    gap: .5rem;
+}
+
+.check-out input{
+    margin-top: 15px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 11pt;
 }
 
 .voltar-btn{

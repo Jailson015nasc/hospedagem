@@ -169,9 +169,15 @@ body {
 
 .check-out {
   display: flex;
-  gap: 2.5rem;
+  gap: .5rem;
 }
-
+.check-out input{
+  background-color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 11pt;
+}
 .caixa-suite {
   display: grid;
   place-items: center;

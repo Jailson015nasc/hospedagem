@@ -6,7 +6,7 @@ const FileStore = require("session-file-store")(session);
 const path = require("path");
 const os = require("os");
 
-const port = 3333
+const port = 4333
 
 // Inicializa o express
 const app = express();
