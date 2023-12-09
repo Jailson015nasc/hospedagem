@@ -1,17 +1,30 @@
 <link rel="stylesheet" href="/css/busca.css">
 
 <body class="body-busca">
-    <div class="caixaa-busca-volta">
-        <a class="arrow-busca" href="/calendar"><i class="fas fa-arrow-left"></i></a>
-       <div class="caixa-busca">
-         <input type="text" name="search" id="" placeholder="Buscar o cliente...">
-         <button class="btn-busca" type="submit">
-         <img class="busca-input" src="/svg/busca.svg" alt="">
-       </button>
-       </div>
-    </div>
+  <div class="caixaa-busca-volta">
+    <a class="arrow-busca" href="/calendar"><i class="fas fa-arrow-left"></i></a>
+
+    <form action="/busca" method="get" class="caixa-busca">
+
+      <input type="text" name="query" placeholder="Buscar o cliente...">
+      <button class="btn-busca" type="submit">
+        <img class="busca-input" src="/svg/busca.svg" alt="">
+      </button>
+
+    </form>
+</div>
+
+<!-- busca.handlebars -->
+{{#if clientesEncontrados.length}}
+  <h1>Resultados da Busca para "{{query}}":</h1>
+  {{#each clientesEncontrados}}
+    <p>Nome: {{this.name}}</p>
+    <p>Email ou CPF: {{this.emailouCpf}}</p>
+    <p>Telefone: {{this.telefone}}</p>
+  {{/each}}
+{{else}}
+  <p>Nenhum cliente encontrado para "{{query}}".</p>
+{{/if}}
+
+
 </body>
-
-
-
-   

@@ -54,46 +54,28 @@ class LosController {
             return res.render("reservado", { users: [], imagensSuites: [] });
          }
 
-         // Recupera a suíte escolhida do último usuário registrado
          const ultimaReserva = users[users.length - 1];
-         const suíteEscolhida = ultimaReserva.suiteEscolhida;
+         const suiteEscolhidaa = ultimaReserva.suiteEscolhida;
 
-         console.log('Suíte escolhida:', suíteEscolhida);
+         console.log('Suíte escolhida:', suiteEscolhidaa);
 
          // Encontra as imagens correspondentes na tabela Imagem
          const imagensSuites = await Imagem.findAll({
             where: {
-               nome: {
-                  [Op.like]: `%${suíteEscolhida}%`
-               }
+               nome: suiteEscolhidaa
             },
          });
-
          console.log('Imagens encontradas:', imagensSuites);
 
          // Se não houver imagens no banco de dados, insira as 15 imagens
          if (imagensSuites.length === 0) {
             const caminhos = [
                "/public/img/suite1.jpg",
-               "/public/img/suite2.jpg",
-               "/public/img/suite3.jpg",
-               "/public/img/suite4.jfif",
-               "/public/img/suite5.jpg",
-               "/public/img/suite6.jpg",
-               "/public/img/suite7.jpg",
-               "/public/img/suite8.jpg",
-               "/public/img/suite9.jpg",
-               "/public/img/suite10.jpg",
-               "/public/img/suite11.jpg",
-               "/public/img/suite12.jpg",
-               "/public/img/suite13.jpg",
-               "/public/img/suite14.jpg",
-               "/public/img/suite15.jpg",
             ];
             // Itera sobre os caminhos e insere no banco de dados
             for (const caminho of caminhos) {
                await Imagem.create({
-                  nome: suíteEscolhida,
+                  nome: suiteEscolhidaa,
                   caminho: caminho,
                });
             }
@@ -101,19 +83,17 @@ class LosController {
             // Recupera as imagens novamente após a inserção
             const imagensInseridas = await Imagem.findAll({
                where: {
-                  nome: {
-                     [Op.like]: `%${suíteEscolhida}%`
-                  }
+                  nome: suiteEscolhidaa
                },
+               raw: true
             });
 
             console.log('Imagens inseridas:', imagensInseridas);
 
-            // Renderiza a página /reservado passando a lista de imagens como parâmetro
+
             return res.render("reservado", { users, imagensSuites: imagensInseridas });
          }
 
-         // Renderiza a página /reservado passando a lista de imagens encontradas no banco
          return res.render("reservado", { users, imagensSuites });
       } catch (error) {
          console.error('Erro ao recuperar usuários:', error);
@@ -121,10 +101,30 @@ class LosController {
       }
    }
 
-
+   
    static async showBusca(req, res) {
-      return res.render("busca");
+      const { query } = req.query;
+
+      try {
+         const clientesEncontrados = await User.findAll({
+            where: {
+               [Op.or]: [
+                  { name: { [Op.like]: `%${query}%` } },
+                  { emailouCpf: { [Op.like]: `%${query}%` } },
+                  { telefone: { [Op.like]: `%${query}%` } },
+                  // Adicione mais condições de busca conforme necessário
+               ],
+            },
+         });
+
+         res.render('busca', { clientesEncontrados, query });
+      } catch (error) {
+         console.error('Erro ao buscar clientes:', error);
+         res.status(500).send('Erro interno do servidor');
+      }
    }
+
+
    static async showHome(req, res) {
       return res.render("home");
    }

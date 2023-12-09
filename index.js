@@ -13,7 +13,7 @@ const app = express();
 
 const connection = require("./db/conn");
 
-app.use('/img', express.static("./public/img/"));
+
 
 // Import Models
 const User = require("./models/User");
@@ -28,6 +28,10 @@ const hbs = handlebars.create({
     json: (context) => JSON.stringify(context, null, 2),
     formatDate: (date) => new Date(date).toISOString().split('T')[0],
   },
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
 });
 
 app.engine("handlebars", hbs.engine);
@@ -36,6 +40,7 @@ app.set("view engine", "handlebars");
 // Configurando o envio de dados
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use('/img', express.static(path.join(__dirname, 'public/img')));
 
 // Configurando a sessão do usuário
 app.use(
@@ -73,7 +78,7 @@ app.use('/', losRouters);
 
 // Conexão com o banco de dados
 connection
-  .sync({force: true})
+  .sync()
   .then(() => {
     app.listen(port, () => {
       console.log(`http://localhost:${port}`)
