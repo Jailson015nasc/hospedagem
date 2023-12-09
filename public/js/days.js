@@ -104,9 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-
-
 // menu
 // Função para exibir/ocultar o menu
 function myFunction() {
