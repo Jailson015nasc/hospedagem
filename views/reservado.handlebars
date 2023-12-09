@@ -42,7 +42,16 @@
             </section>
 
             <div class="caixa-suite">
-                <img class="img" src="/img/suite1.jpg" alt="">
+
+                {{#if imagensSuites.length}}
+                {{#each imagensSuites}}
+                <img id="imagemReservado" class="img" src="{{this.caminho}}" alt="">
+                {{/each}}
+                {{else}}
+                <!-- Caso não haja imagensSuites -->
+                <p>Nenhuma imagem disponível para a suíte</p>
+                {{/if}}
+
                 <aside class="aside">
                     <i class="fas fa-angle-left ant"></i>
                     <h2>{{this.suiteEscolhida}}</h2>
@@ -51,7 +60,6 @@
                 </aside>
                 {{!-- <strong id="indisponivel"></strong> --}}
                 <p>preço <br> {{this.precoEscolhida}}</p>
-                <div class="reserva-info"></div>
 
             </div>
         </article>
@@ -67,5 +75,5 @@
         </a>
     </div>
 
-
+    <script src="/js/reservado.js"></script>
 </body>

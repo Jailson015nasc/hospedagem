@@ -39,10 +39,7 @@ const User = database.define("User", {
     type: DataTypes.STRING,
     allowNull: true,
   },
-  imagem: {
-    type: DataTypes.STRING,
-    allowNull: true,
-  }
+
 });
 
 module.exports = User;
