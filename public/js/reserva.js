@@ -54,7 +54,7 @@ document.querySelector('.pro').addEventListener('click', function () {
   // Função para obter a data e hora atual formatada
   function getCurrentDateTime() {
     const now = new Date();
-    const options = { month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
+    const options = {  hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
     return now.toLocaleDateString('pt-BR', options);
   }
 
@@ -63,7 +63,6 @@ document.querySelector('.pro').addEventListener('click', function () {
     const currentDateTime = getCurrentDateTime();
 
     // Atualizar elementos apenas para check-in
-    document.getElementById("checkInDate").textContent = currentDateTime.split(" ")[0];
     document.getElementById("checkInTime").textContent = currentDateTime.split(" ")[1];
   }
 
@@ -72,3 +71,13 @@ document.querySelector('.pro').addEventListener('click', function () {
 
   // Atualizar a cada segundo
   setInterval(updateDateTime, 1000);
+
+
+
+
+
+   // Extrai o número do dia da URL
+   var numeroDia = window.location.search.replace("?dia=", "");
+
+   // Exibe o número do dia na página
+   document.getElementById("checkInDate").innerText = numeroDia;

@@ -78,7 +78,7 @@ app.use('/', losRouters);
 
 // Conexão com o banco de dados
 connection
-  .sync()
+  .sync({force: true})
   .then(() => {
     app.listen(port, () => {
       console.log(`http://localhost:${port}`)

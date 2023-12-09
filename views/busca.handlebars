@@ -40,13 +40,10 @@
         <input type="time" id="hora" name="horaEscolhida" value="{{this.horaEscolhida}}">
       </div>
     </div>
-
   </div>
-
   {{/each}}
   {{else}}
-  <span>Nenhum cliente encontrado para "{{query}}".</span>
+  <div class="reserva-mm">Nenhum cliente encontrado para <strong class="query">"{{query}}"!</strong>.</div>
   {{/if}}
 
-  <script src="/js/busca.js"></script>
 </body>

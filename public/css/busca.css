@@ -98,3 +98,18 @@
     color: #fff;
     font-size: 11pt;
 }
+
+
+.reserva-mm{
+    text-align: center;
+    width: 600px;
+    padding: 20px;
+    margin:20px 210px;
+    font-size: 17pt;
+    color: #429ED2;
+    border: 2px solid ;
+}
+
+.query{
+    color: #fff;
+}
