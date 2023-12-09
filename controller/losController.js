@@ -101,7 +101,7 @@ class LosController {
       }
    }
 
-   
+
    static async showBusca(req, res) {
       const { query } = req.query;
 
@@ -110,8 +110,8 @@ class LosController {
             where: {
                [Op.or]: [
                   { name: { [Op.like]: `%${query}%` } },
-                  { emailouCpf: { [Op.like]: `%${query}%` } },
-                  { telefone: { [Op.like]: `%${query}%` } },
+                  { emailouCpf: { [Op.like]: `%${query}` } },
+                  { telefone: { [Op.like]: `${query}%` } },
                   // Adicione mais condições de busca conforme necessário
                ],
             },

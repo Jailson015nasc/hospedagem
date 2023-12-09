@@ -1,21 +1,26 @@
-.body-busca{
+.body-busca {
     background-color: #0D4C92;
     margin-top: 20px;
+    font-family: "Inter", sans-serif;
 }
-.caixaa-busca-volta{
+
+.caixaa-busca-volta {
     display: flex;
     justify-content: space-around;
     width: 940px;
 }
-.arrow-busca{
+
+.arrow-busca {
     margin-top: 15px;
     color: #fff;
     font-size: 1.3rem;
 }
-.caixa-busca{
+
+.caixa-busca {
     display: flex;
 }
-.caixa-busca input{
+
+.caixa-busca input {
     background-color: #429ED2;
     width: 700px;
     padding: 15px;
@@ -25,16 +30,71 @@
     border: none;
     font-size: 14pt;
 }
-.caixa-busca input::placeholder{
-   font-size: 12pt;
-   color: #fff;
+
+.caixa-busca input::placeholder {
+    font-size: 12pt;
+    color: #fff;
 }
-.btn-busca{
+
+.btn-busca {
     background-color: transparent;
     border: none;
     cursor: pointer;
     margin-left: -45px;
 }
-.busca-input{
+
+.busca-input {
     height: 30px;
+}
+
+
+.info-busca {
+    background-color: #429ED2;
+    width: 400px;
+    padding: 0px 30px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+.info-hp h1{
+    padding-top: 10px;
+}
+
+.info-hp p{
+    opacity: 60%;
+    font-size: 16pt;
+}
+
+/* check in e out */
+.resultHorario {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin-top: -20px;
+}
+
+.resultHorario h2 {
+    font-size: 15pt;
+}
+
+.check-in {
+    margin-top: -20px;
+    display: flex;
+    gap: 3rem;
+}
+
+.check-out {
+    margin-top: -20px;
+    display: flex;
+    gap: .5rem;
+}
+
+.check-out input {
+    margin-top: 15px;
+    height: 20px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    font-size: 11pt;
 }

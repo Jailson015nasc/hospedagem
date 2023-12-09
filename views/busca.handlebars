@@ -6,25 +6,47 @@
 
     <form action="/busca" method="get" class="caixa-busca">
 
-      <input type="text" name="query" placeholder="Buscar o cliente...">
+      <input type="text" name="query" placeholder="Buscar:{{query}} ">
       <button class="btn-busca" type="submit">
         <img class="busca-input" src="/svg/busca.svg" alt="">
       </button>
 
     </form>
-</div>
+  </div>
 
-<!-- busca.handlebars -->
-{{#if clientesEncontrados.length}}
-  <h1>Resultados da Busca para "{{query}}":</h1>
+  <!-- busca.handlebars -->
+  {{#if clientesEncontrados.length}}
+  {{!-- <h1>Resultados da Busca para "{{query}}":</h1> --}}
   {{#each clientesEncontrados}}
-    <p>Nome: {{this.name}}</p>
-    <p>Email ou CPF: {{this.emailouCpf}}</p>
-    <p>Telefone: {{this.telefone}}</p>
+  <div class="info-busca">
+
+    <div class="info-hp">
+      <h1>{{this.name}}. {{this.suiteEscolhida}}</h1>
+      <p>{{this.emailouCpf}}</p>
+      <p>{{this.telefone}}</p>
+    </div>
+
+
+    <div class="resultHorario">
+      <h2>Data de Check-in e Check-out:</h2>
+      <div class="check-in">
+        <h3>Check-in:</h3>
+        <h3 id="checkInDate">00/00</h3>
+        <h3 id="checkInTime">00:00hr</h3>
+      </div>
+      <div class="check-out">
+        <h3>Check-out:</h3>
+        <input type="date" id="data" name="data" value="{{formatDate this.data}}">
+        <input type="time" id="hora" name="horaEscolhida" value="{{this.horaEscolhida}}">
+      </div>
+    </div>
+
+  </div>
+
   {{/each}}
-{{else}}
-  <p>Nenhum cliente encontrado para "{{query}}".</p>
-{{/if}}
+  {{else}}
+  <span>Nenhum cliente encontrado para "{{query}}".</span>
+  {{/if}}
 
-
+  <script src="/js/busca.js"></script>
 </body>
