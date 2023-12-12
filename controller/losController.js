@@ -3,7 +3,7 @@ const Imagem = require("../models/Imagem");
 const { Op } = require("sequelize");
 // LosController.js
 
-class LosController {
+module.exports = class LosController {
    static async register(req, res) {
       const { name, emailouCpf, telefone, data, horaEscolhida, suiteEscolhida, precoEscolhida } = req.body;
       let user;
@@ -59,7 +59,7 @@ class LosController {
 
          console.log('Suíte escolhida:', suiteEscolhidaa);
 
-         // Encontra as imagens correspondentes na tabela Imagem
+     
          const imagensSuites = await Imagem.findAll({
             where: {
                nome: suiteEscolhidaa
@@ -67,12 +67,12 @@ class LosController {
          });
          console.log('Imagens encontradas:', imagensSuites);
 
-         // Se não houver imagens no banco de dados, insira as 15 imagens
+      
          if (imagensSuites.length === 0) {
             const caminhos = [
                "/public/img/suite1.jpg",
             ];
-            // Itera sobre os caminhos e insere no banco de dados
+          
             for (const caminho of caminhos) {
                await Imagem.create({
                   nome: suiteEscolhidaa,
@@ -80,7 +80,7 @@ class LosController {
                });
             }
 
-            // Recupera as imagens novamente após a inserção
+           
             const imagensInseridas = await Imagem.findAll({
                where: {
                   nome: suiteEscolhidaa
@@ -112,7 +112,6 @@ class LosController {
                   { name: { [Op.like]: `%${query}%` } },
                   { emailouCpf: { [Op.like]: `%${query}` } },
                   { telefone: { [Op.like]: `${query}%` } },
-                  // Adicione mais condições de busca conforme necessário
                ],
             },
          });
@@ -138,4 +137,3 @@ class LosController {
    }
 }
 
-module.exports = LosController;

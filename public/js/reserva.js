@@ -51,22 +51,21 @@ document.querySelector('.pro').addEventListener('click', function () {
 
 
 // ResultHorario
-  // Função para obter a data e hora atual formatada
+  
   function getCurrentDateTime() {
     const now = new Date();
     const options = {  hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false };
     return now.toLocaleDateString('pt-BR', options);
   }
 
-  // Função para atualizar os elementos HTML com a data e hora atual
+  
   function updateDateTime() {
     const currentDateTime = getCurrentDateTime();
 
-    // Atualizar elementos apenas para check-in
+    // atualizar elementos apenas para check-in
     document.getElementById("checkInTime").textContent = currentDateTime.split(" ")[1];
   }
 
-  // Chamar a função para a primeira atualização
   updateDateTime();
 
   // Atualizar a cada segundo

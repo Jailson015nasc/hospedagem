@@ -116,7 +116,7 @@
 
 .clientesencontrados{
     width: 1000px;
-    margin:20px auto;
+    margin: 20px auto;
     flex-wrap: wrap;
     display: flex;
     gap: 1rem;
